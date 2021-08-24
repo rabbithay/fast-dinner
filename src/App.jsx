@@ -1,5 +1,6 @@
 import React from 'react';
 import TopBar from './components/TopBar';
+import BottomBar from './components/BottomBar';
 import GlobalStyles from './utils/GlobalStyles';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <GlobalStyles />
       <TopBar />
-      aaaaaa
+      <BottomBar />
     </>
   );
 }

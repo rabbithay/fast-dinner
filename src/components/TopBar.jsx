@@ -25,6 +25,7 @@ const Content = styled.div`
     flex-direction: column;
     padding-left: 21px;
     position: fixed;
+    top: 0px;
 `;
 const Title = styled.h1`
     color: #fff;
