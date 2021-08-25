@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
 import images from '../utils/images.jpg';
 
 function ProductBox({ info }) {
@@ -68,10 +67,5 @@ const ProductValue = styled.p`
     font-size: 16px;
     font-weight: 500;
 `;
-
-// IxClickOut.propTypes = {
-//   children: PropTypes.any,
-//   onClickOut: PropTypes.func,
-// };
 
 export default ProductBox;
