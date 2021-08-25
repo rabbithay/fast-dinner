@@ -1,17 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProductBox from './ProductBox';
+import menu from '../data/menu';
 
 export default function Menu() {
   return (
     <Background>
-      <CategoryDescription>
-        Primeiro, seu prato
-      </CategoryDescription>
-      <CategoryList>
-        <ProductBox />
-      </CategoryList>
+      {menu.map((category) => (
+        <>
+          <CategoryDescription>
+            {category.categoryTitle}
+          </CategoryDescription>
+          <CategoryList>
+            {category.items.map((item) => (
+              <ProductBox info={item} />
+            ))}
+          </CategoryList>
+
+        </>
+      ))}
     </Background>
+
   );
 }
 
