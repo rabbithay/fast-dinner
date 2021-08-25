@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import images from '../utils/images.jpg';
 
-export default function ProductBox() {
+function ProductBox({ info }) {
+  const [clicked, setClicked] = useState(false);
+  const {
+    name, description, price,
+  } = info;
   return (
-    <Box>
+    <Box clicked={clicked} onClick={() => { setClicked(!clicked); }}>
       <ProductImage src={images} />
       <ProductName>
-        Frango Yin Yang
+        {name}
       </ProductName>
       <ProductDescription>
-        Um pouco de batata, um pouco de salada
+        {description}
       </ProductDescription>
       <ProductValue>
-        R$ 14,90
+        {price}
       </ProductValue>
     </Box>
   );
 }
+
 const Box = styled.div`
     width: 172px;
     height: 215px;
@@ -27,7 +32,8 @@ const Box = styled.div`
     padding: 14px;
     background-color: #fff;
     margin: 17px 17px 0px 0px;
-    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 
+    inset ${(props) => (props.clicked ? '0px 0px 0px 5px #32B72F' : '')};    
     border-radius: 9px;
     p {
         line-height: 19px;
@@ -61,3 +67,5 @@ const ProductValue = styled.p`
     font-size: 16px;
     font-weight: 500;
 `;
+
+export default ProductBox;
