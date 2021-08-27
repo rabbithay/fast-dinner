@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductBox from './ProductBox';
 import menu from '../data/menu';
+import CategoryItemsList from './CategoryItemsList';
 
-export default function Menu() {
+function Menu({ listOfItems, setListOfItems }) {
   return (
     <Background>
       {menu.map((category) => (
@@ -11,40 +11,32 @@ export default function Menu() {
           <CategoryDescription>
             {category.categoryTitle}
           </CategoryDescription>
-          <CategoryList>
-            {category.items.map((item) => (
-              <ProductBox info={item} />
-            ))}
-          </CategoryList>
-
+          <CategoryItemsList
+            setListOfItems={setListOfItems}
+            listOfItems={listOfItems}
+            items={category.items}
+          />
         </>
       ))}
     </Background>
 
   );
 }
+export default Menu;
 
 const Background = styled.div`
     width: 100%;
     height: auto ;
-    background-color: #E5E5E5;
+    background-color: #edeef4;
     display: flex;
     align-items: left;
     flex-direction: column;
     padding: 92px 0px 107px 21px;
 `;
 
-const CategoryList = styled.div`
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-`;
-
 const CategoryDescription = styled.h2`
     margin-top: 30px;
-    color: #333;
+    color: #0e0e13;
     font-size: 26px;
     font-family: "Righteous";
     font-weight: 500;
