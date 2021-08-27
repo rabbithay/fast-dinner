@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import env from 'react-dotenv';
 
 export default function BottomBar({ selectedItems }) {
   const [enabled, setEnabled] = useState(false);
@@ -51,7 +50,7 @@ export default function BottomBar({ selectedItems }) {
     const total = calculateTotal();
     const message = detailOrder(total);
     const urlmensagem = encodeURIComponent(message);
-    const linkwhatsapp = `https://wa.me/${env.WHATSAPP_NUMBER}?text=${urlmensagem}`;
+    const linkwhatsapp = `https://wa.me/${process.env.REACT_APP_WHATSAPP_NUMBER}?text=${urlmensagem}`;
     window.open(linkwhatsapp);
   }
 
