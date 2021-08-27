@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import env from 'react-dotenv';
 
 export default function BottomBar({ selectedItems }) {
   const [enabled, setEnabled] = useState(false);
@@ -18,19 +19,40 @@ export default function BottomBar({ selectedItems }) {
     selectedItems.forEach((i) => {
       totalValue += parseFloat((i.price).replace(',', '.')) * i.quantity;
     });
-    console.log(totalValue.toFixed(2));
+    return (totalValue.toFixed(2));
   }
-  function detailOrder() {
-    const message = 'Olá, gostaria de fazer o pedido:';
+  function detailOrder(total) {
+    let message = 'Olá, gostaria de fazer o pedido:\n';
+    message += '- Pratos: \n';
+    selectedItems.forEach((item) => {
+      if (item.categoryId === 1) {
+        message += `${item.name} ${(item.quantity > 1) ? `(${item.quantity}x)` : ''}\n`;
+      }
+    });
+    message += '- Bebidas: \n';
+    selectedItems.forEach((item) => {
+      if (item.categoryId === 2) {
+        message += `${item.name} ${(item.quantity > 1) ? `(${item.quantity}x)` : ''}\n`;
+      }
+    });
+    message += '- Sobremesas: \n';
+    selectedItems.forEach((item) => {
+      if (item.categoryId === 3) {
+        message += `${item.name} ${(item.quantity > 1) ? `(${item.quantity}x)` : ''}\n`;
+      }
+    });
+    message += `Total: R$ ${total}`;
     return message;
   }
   function closeOrder() {
     if (!enabled) {
       return;
     }
-    calculateTotal();
-    detailOrder();
-    alert('seu pedido já está sendo preparado! :D');
+    const total = calculateTotal();
+    const message = detailOrder(total);
+    const urlmensagem = encodeURIComponent(message);
+    const linkwhatsapp = `https://wa.me/${env.WHATSAPP_NUMBER}?text=${urlmensagem}`;
+    window.open(linkwhatsapp);
   }
 
   return (
