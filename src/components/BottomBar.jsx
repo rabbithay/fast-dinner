@@ -30,6 +30,7 @@ export default function BottomBar({ selectedItems }) {
     }
     calculateTotal();
     detailOrder();
+    alert('seu pedido já está sendo preparado! :D');
   }
 
   return (
