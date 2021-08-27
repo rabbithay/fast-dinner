@@ -12,12 +12,27 @@ export default function Counter({
     setIsSelected(true);
     setHideCounter(false);
   }
+  if (value < 0) {
+    setValue(0);
+  }
 
   return (
     <Buttons hideCounter={hideCounter}>
-      <Minus onClick={(e) => { setValue(value - 1); e.stopPropagation(); }}>-</Minus>
+      <Minus onClick={(e) => {
+        setValue(value - 1);
+        e.stopPropagation();
+      }}
+      >
+        -
+      </Minus>
       <Value className="value">{value}</Value>
-      <Plus onClick={(e) => { setValue(value + 1); e.stopPropagation(); }}>+</Plus>
+      <Plus onClick={(e) => {
+        setValue(value + 1);
+        e.stopPropagation();
+      }}
+      >
+        +
+      </Plus>
     </Buttons>
   );
 }

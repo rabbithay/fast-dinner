@@ -1,12 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-export default function BottomBar() {
+export default function BottomBar({ selectedItems }) {
   const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    if (selectedItems.some((i) => i.categoryId === 1)
+    && selectedItems.some((i) => i.categoryId === 2)
+    && selectedItems.some((i) => i.categoryId === 3)) {
+      setEnabled(true);
+    } else {
+      setEnabled(false);
+    }
+  }, [selectedItems]);
+  function calculateTotal() {
+    let totalValue = 0;
+    selectedItems.forEach((i) => {
+      totalValue += parseFloat((i.price).replace(',', '.')) * i.quantity;
+    });
+    console.log(totalValue.toFixed(2));
+  }
+  function detailOrder() {
+    const message = 'Olá, gostaria de fazer o pedido:';
+    return message;
+  }
+  function closeOrder() {
+    if (!enabled) {
+      return;
+    }
+    calculateTotal();
+    detailOrder();
+  }
 
   return (
     <Background>
-      <ConfirmOrder enabled={enabled} onClick={() => setEnabled(enabled)}>
+      <ConfirmOrder enabled={enabled} onClick={closeOrder}>
         <OrderStatus>
           {(enabled) ? 'Fechar pedido' : (
             <>
@@ -22,7 +50,6 @@ export default function BottomBar() {
     </Background>
   );
 }
-
 const Background = styled.div`
     width: 100%;
     height: 92px;
@@ -35,6 +62,7 @@ const Background = styled.div`
     bottom: 0px;
     z-index: 3;
 `;
+
 const ConfirmOrder = styled.button`
     width: calc(100% - 50px);
     height: 61px;

@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import ProductBox from './ProductBox';
 
-export default function ListOfItems({ items }) {
+export default function CategoryItemsList({ items, setListOfItems, listOfItems }) {
   return (
     <CategoryList>
       {items.map((item) => (
-        <ProductBox info={item} />
+        <ProductBox
+          info={item}
+          setListOfItems={setListOfItems}
+          listOfItems={listOfItems}
+        />
       ))}
     </CategoryList>
   );

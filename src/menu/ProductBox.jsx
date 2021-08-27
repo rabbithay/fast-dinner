@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import images from '../utils/images.jpg';
 import Counter from './Counter';
 
-function ProductBox({ info }) {
+function ProductBox({ info, listOfItems, setListOfItems }) {
   const [isSelected, setIsSelected] = useState(false);
   const [value, setValue] = useState(0);
   const [hideCounter, setHideCounter] = useState(true);
 
   const {
-    name, description, price,
+    name, description, price, itemId,
   } = info;
 
+  useEffect(() => {
+    const updatedListOfItems = listOfItems.map((item) => {
+      if (item.itemId === itemId) {
+        // eslint-disable-next-line no-param-reassign
+        item.quantity = value;
+      }
+      return item;
+    });
+    setListOfItems(updatedListOfItems);
+  }, [value]);
   function selectItemBox() {
     if (!isSelected) {
       setIsSelected(true);
@@ -29,7 +39,12 @@ function ProductBox({ info }) {
       <ProductImage src={images} />
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
-      <ProductValue>{price}</ProductValue>
+      <ProductValue>
+        {' '}
+        R$
+        {' '}
+        {price}
+      </ProductValue>
       <Counter
         isSelected={isSelected}
         setIsSelected={setIsSelected}
@@ -37,6 +52,9 @@ function ProductBox({ info }) {
         setValue={setValue}
         hideCounter={hideCounter}
         setHideCounter={setHideCounter}
+        setListOfItems={setListOfItems}
+        listOfItems={listOfItems}
+        itemId={itemId}
       />
     </Box>
   );

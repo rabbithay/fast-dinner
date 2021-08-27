@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import menu from '../data/menu';
-import ListOfItems from './CategoryItemsList';
+import CategoryItemsList from './CategoryItemsList';
 
-export default function Menu() {
+function Menu({ listOfItems, setListOfItems }) {
   return (
     <Background>
       {menu.map((category) => (
@@ -11,13 +11,18 @@ export default function Menu() {
           <CategoryDescription>
             {category.categoryTitle}
           </CategoryDescription>
-          <ListOfItems items={category.items} />
+          <CategoryItemsList
+            setListOfItems={setListOfItems}
+            listOfItems={listOfItems}
+            items={category.items}
+          />
         </>
       ))}
     </Background>
 
   );
 }
+export default Menu;
 
 const Background = styled.div`
     width: 100%;
