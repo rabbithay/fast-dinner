@@ -5,7 +5,7 @@ export default function TopBar() {
   return (
     <Content>
       <Title>
-        FoodCamp
+        DrivenEats
       </Title>
       <SubTitle>
         Sua comida em 6 minutos
@@ -17,7 +17,7 @@ export default function TopBar() {
 const Content = styled.div`
     width: 100%;
     height: 92px;
-    background-color: #CF2B2B;
+    background-color: #e94692;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: left;
@@ -26,6 +26,7 @@ const Content = styled.div`
     padding-left: 21px;
     position: fixed;
     top: 0px;
+    z-index: 3;
 `;
 const Title = styled.h1`
     color: #fff;

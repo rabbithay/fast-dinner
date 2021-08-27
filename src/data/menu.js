@@ -8,6 +8,7 @@ const menu = [
       description: 'Acompanha arroz com passas',
       price: '30,00',
       itemId: 1,
+      quantity: 0,
     },
     {
       imageUrl: 'moqueca-de-peixe',
@@ -15,6 +16,7 @@ const menu = [
       description: 'Acompanha arroz e pirão',
       price: '25,00',
       itemId: 1,
+      quantity: 0,
     },
     {
       imageUrl: 'acaraje',
@@ -22,6 +24,7 @@ const menu = [
       description: 'Poção de 3 unidades, acompanha molho',
       price: '20,00',
       itemId: 1,
+      quantity: 0,
     }],
   },
   {
@@ -30,9 +33,10 @@ const menu = [
     items: [{
       imageUrl: 'suquinhodecaja',
       name: 'Suco de Cajá',
-      description: 'Da fruta, 500ml',
+      description: 'Da fruta, geladinho! 500ml',
       price: '4,99',
       itemId: 1,
+      quantity: 0,
     },
     {
       imageUrl: 'suquinhodecaja',
@@ -40,6 +44,7 @@ const menu = [
       description: 'Da fruta, 350ml',
       price: '3,99',
       itemId: 1,
+      quantity: 0,
     },
     {
       imageUrl: 'suquinhodecaja',
@@ -47,6 +52,7 @@ const menu = [
       description: 'Da fruta, 200ml',
       price: '2,99',
       itemId: 1,
+      quantity: 0,
     }],
   },
   {
@@ -55,23 +61,26 @@ const menu = [
     items: [{
       imageUrl: 'docedejenipapo',
       name: 'Doce de Jenipapo',
-      description: 'Delícia regional',
+      description: 'Delícia regional, sabor marcante!',
       price: '6,99',
       itemId: 1,
+      quantity: 5,
     },
     {
       imageUrl: 'cocada',
       name: 'Cocada',
-      description: 'Delícia regional',
+      description: 'Delícia regional, derrete na boca!',
       price: '8,99',
       itemId: 1,
+      quantity: 0,
     },
     {
       imageUrl: 'queijadinha',
       name: 'Queijadinha',
-      description: 'Delícia regional',
+      description: 'Delícia regional, quem prova, se apaixona!',
       price: '3,99',
       itemId: 1,
+      quantity: 3,
     }],
   },
 ];

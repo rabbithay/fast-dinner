@@ -2,7 +2,7 @@ import React from 'react';
 import TopBar from './components/TopBar';
 import BottomBar from './components/BottomBar';
 import GlobalStyles from './utils/GlobalStyles';
-import Menu from './menu/index';
+import Menu from './menu/Menu';
 
 function App() {
   return (
