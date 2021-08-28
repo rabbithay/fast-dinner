@@ -90,6 +90,9 @@ const ConfirmOrder = styled.button`
     height: 61px;
     background-color: ${(props) => (props.enabled ? '#f676b5' : '#bbbbcd')} ;
     border-radius: 50px;
+    @media (min-width: 600px){
+      width: 550px;
+    }
 `;
 const OrderStatus = styled.p`
     color: #fff;

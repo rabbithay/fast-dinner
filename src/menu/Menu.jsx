@@ -32,6 +32,9 @@ const Background = styled.div`
     align-items: left;
     flex-direction: column;
     padding: 92px 0px 107px 21px;
+    @media (min-width: 600px){
+      align-items: center;
+    }
 `;
 
 const CategoryDescription = styled.h2`
