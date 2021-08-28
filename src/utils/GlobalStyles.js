@@ -52,6 +52,11 @@ const GlobalStyle = createGlobalStyle`
     }
     *{
         box-sizing: border-box;
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
     button{
         border: none;
@@ -59,6 +64,6 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
-    
+ 
 `;
 export default GlobalStyle;
