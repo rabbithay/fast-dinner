@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export default function ReviewOder({ selectedItems }) {
   function calculateTotal() {
@@ -72,9 +73,12 @@ export default function ReviewOder({ selectedItems }) {
           </Line>
         </Total>
       </DetailedOrder>
-      <Confirm onClick={() => sendToWhats()}>
+      <Confirm onClick={sendToWhats}>
         Tudo certo, pode pedir!
       </Confirm>
+      <Link to="/">
+        <Cancel>Cancelar</Cancel>
+      </Link>
     </Background>
   );
 }
@@ -118,7 +122,6 @@ const Confirm = styled.button`
     font-size: 22px;
     font-family: "Roboto";
     font-weight: 700;
-    font-family: Roboto;
 
 `;
 const Line = styled.div`
@@ -134,10 +137,18 @@ const Line = styled.div`
   }
 `;
 const Total = styled.div`
-p{
-  font-weight: 700;
+  p{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+  }
+`;
+const Cancel = styled.p`
+  font-family: 'Roboto';
+  font-weight: bold;
   font-size: 20px;
-  line-height: 26px;
-}
-
+  line-height: 23px;
+  letter-spacing: 0.018em;
+  color: #777777;
+  margin-top: 10px;
 `;
