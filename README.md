@@ -6,7 +6,7 @@
 
 ## About
 
-Fast Dinner is the implementation of a restaurant menu Web application that promises to deliver your order in 6 minutes! (Didn't want to work in this kitchen, thank goodness I'm just the dev.)
+Fast Dinner is the implementation of a restaurant menu Web application that promises to deliver your order in 6 minutes! (I wouldn't want to work in this kitchen, thank goodness I'm just the dev.)
 
 You can choose the menu items you want to order: food, drink and dessert. The quantity of each item can be changed, and when selecting items from each of the categories the order confirmation button is enabled.
 
@@ -22,7 +22,7 @@ um gif da aplicação bem maneiro -->
 
 ## Deployment
 
-<p align="center"><a  src="fast-dinner.vercel.app/">fast-dinner.vercel.app/</a></p>
+<p align="center"><a  href="fast-dinner.vercel.app/">fast-dinner.vercel.app/</a></p>
 
 
 ## Features 
