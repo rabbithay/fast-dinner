@@ -48,7 +48,7 @@ const menu = [
     {
       imageUrl: 'suquinhodecaja',
       name: 'Suco de Cajá',
-      description: 'Da fruta, 350ml',
+      description: 'Da fruta, geladinho! 350ml',
       price: '3,99',
       itemId: 5,
       quantity: 0,
@@ -58,7 +58,7 @@ const menu = [
     {
       imageUrl: 'suquinhodecaja',
       name: 'Suco de Cajá',
-      description: 'Da fruta, 200ml',
+      description: 'Da fruta, geladinho! 200ml',
       price: '2,99',
       itemId: 6,
       quantity: 0,

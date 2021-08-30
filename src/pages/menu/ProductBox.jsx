@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import images from '../../utils/images.jpg';
 import Counter from './Counter';
 
 function ProductBox({ info, listOfItems, setListOfItems }) {
@@ -9,8 +8,10 @@ function ProductBox({ info, listOfItems, setListOfItems }) {
   const [hideCounter, setHideCounter] = useState(true);
 
   const {
-    name, description, price, itemId,
+    name, description, price, itemId, imageUrl,
   } = info;
+
+  const image = `/images/${imageUrl}.jpg`;
 
   useEffect(() => {
     const updatedListOfItems = listOfItems.map((item) => {
@@ -36,7 +37,7 @@ function ProductBox({ info, listOfItems, setListOfItems }) {
         selectItemBox();
       }}
     >
-      <ProductImage src={images} />
+      <ProductImage src={image} />
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
       <ProductValue>
