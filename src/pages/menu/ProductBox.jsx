@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import images from '../utils/images.jpg';
+import images from '../../utils/images.jpg';
 import Counter from './Counter';
 
 function ProductBox({ info, listOfItems, setListOfItems }) {
