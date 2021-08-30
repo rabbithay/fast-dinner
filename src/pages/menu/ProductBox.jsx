@@ -11,6 +11,8 @@ function ProductBox({ info, listOfItems, setListOfItems }) {
     name, description, price, itemId, imageUrl,
   } = info;
 
+  const image = `/images/${imageUrl}.jpg`;
+
   useEffect(() => {
     const updatedListOfItems = listOfItems.map((item) => {
       if (item.itemId === itemId) {
@@ -35,7 +37,7 @@ function ProductBox({ info, listOfItems, setListOfItems }) {
         selectItemBox();
       }}
     >
-      <ProductImage src={() => `src/data/images/${imageUrl}.jpg`} />
+      <ProductImage src={image} />
       <ProductName>{name}</ProductName>
       <ProductDescription>{description}</ProductDescription>
       <ProductValue>
