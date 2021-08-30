@@ -1,4 +1,4 @@
-# Title of My Application
+# Fast Dinner
 
 <p align="center">
   <img src="public/icon.ico" width="175" alt="FastDinner" />
