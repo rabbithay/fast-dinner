@@ -22,7 +22,7 @@ um gif da aplicação bem maneiro -->
 
 ## Deployment
 
-<p align="center"><a  href="fast-dinner.vercel.app/">fast-dinner.vercel.app/</a></p>
+<p align="center"><a  href="https://fast-dinner.vercel.app/">fast-dinner.vercel.app/</a></p>
 
 
 ## Features 
